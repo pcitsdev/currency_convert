@@ -23,14 +23,14 @@ Or install it yourself as:
 
 ## Usage
 
---Dummy rates are added with the gem. To update/change rates use command
+Dummy rates are added with the gem. To update/change rates use command
 ```ruby
 CurrencyConvert::Money.conversion_rates('EUR', {'USD' => 1.11,'Bitcoin' => 0.0047})
 ```
 Here "EUR" is a base currency and "USD", "Bitcoin" are the conversion rates for the base currency
 Note: Enter rates in hash format
 
---To create a currency object
+To create a currency object
 ```ruby
 fifty_eur = CurrencyConvert::Money.new(50, 'EUR')
 ```
@@ -40,13 +40,13 @@ fifty_eur.amount   # => 50
 fifty_eur.currency # => "EUR"
 fifty_eur.inspect  # => "50.00 EUR"
 ```
---Conversions
+Conversions
 ```ruby
 fifty_eur.convert_to('USD') # => 55.50 USD
 ```
 Here "USD" rate should be updated to get the correct conversion amount
 
---Arithmetics operations
+Arithmetics operations
 	Examples:
 ```ruby
 twenty_dollars = CurrencyConvert::Money.new(20, 'USD')
@@ -57,7 +57,7 @@ twenty_dollars * 3         # => 60 USD
 ```
 Note: the final result will be in the currency used as first operand
 
---Coditional operations
+Coditional operations
 ```ruby
 twenty_dollars == CurrencyConvert::Money.new(20, 'USD') # => true
 twenty_dollars == CurrencyConvert::Money.new(30, 'USD') # => false
@@ -68,7 +68,7 @@ fifty_eur_in_usd == fifty_eur          # => true
 twenty_dollars > CurrencyConvert::Money.new(5, 'USD')   # => true
 twenty_dollars < fifty_eur             # => true
 ```
--- Note
+Note
 	If any conversion is not defined it will display message.
 ```ruby
 "conversion rates not set"
