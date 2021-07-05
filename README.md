@@ -12,7 +12,7 @@ gem 'currency_convert', git: "git://github.com/pcitsdev/currency_convert"
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
